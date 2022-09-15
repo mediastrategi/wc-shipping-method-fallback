@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Shipping Method Fallback\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-15 16:38+0200\n"
+"PO-Revision-Date: 2022-09-15 16:40+0200\n"
+"Last-Translator: \n"
+"Language-Team: Svenska\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Loco-Version: 2.5.2; wp-5.7\n"
+"X-Domain: wc-postnord\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-KeywordsList: ;__;_e\n"
+"X-Poedit-SearchPath-0: includes\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+"X-Poedit-SearchPathExcluded-1: includes/languages\n"
+
+#: autoload.php:50
+#, php-format
+msgid ""
+"WooCommerce Shipping Method Fallback for WooCommerce autoloader failed for "
+"class \"%s\" at \"%s\"!"
+msgstr ""
+"WooCommerce Fraktsätt Räddare för WooCommerce autoladdare misslyckades för "
+"klass \"%s\" vid \"%s\"!"
+
+#: includes/shipping-method.php:51
+msgid "Method title"
+msgstr "Fraktsätt titel"
+
+#: includes/shipping-method.php:54 includes/shipping-method.php:62
+msgid "Only visible when a specific shipping method is not loading."
+msgstr "Visas bara när ett specifikt fraktsätt inte laddas."
+
+#: includes/shipping-method.php:66
+msgid "Cost"
+msgstr "Kostnad"
+
+#: includes/shipping-method.php:73
+msgid ""
+"This shipping method will only be displayed if the selected shipping method "
+"cannot be found."
+msgstr ""
+"Det här fraktsättet kommer bara visas om det valda fraktsättet inte kan "
+"hittas."
+
+#: includes/shipping-method.php:78
+msgid "Shipping method to search for"
+msgstr "Fraktsätt att söka efter"
+
+#: includes/shipping-method.php:84
+msgid "Tax status"
+msgstr "Momsstatus"
+
+#: includes/shipping-method.php:89
+msgid "Taxable"
+msgstr "Momspliktig"
+
+#: wc-shipping-method-fallback.php:24
+msgid ""
+"Shipping method fallback for checkout in the case a specific shipping method "
+"is not loading."
+msgstr ""
+"Fraktsätt Räddare för kassan i de fall då ett specifikt fraktsätt inte "
+"laddas."

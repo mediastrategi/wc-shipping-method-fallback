@@ -1,0 +1,6 @@
+.dir-locals.el
+.ac-php-conf.json
+.tern-port
+.DS_Store
+flycheck_*
+.idea
