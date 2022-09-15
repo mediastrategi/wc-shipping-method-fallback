@@ -26,7 +26,7 @@ class ShippingMethod extends \WC_Shipping_Method
 
     public $method_title = self::METHOD_TITLE;
 
-    public $method_description = 'Shipping method fallback for checkout in the case a specific shipping method is not loading.';
+    public $method_description = 'Shipping method fallback for checkout in the case a specific shipping method is not loading. This shipping method must be placed at the bottom of a shipping-zone in order for it to work.';
 
     public $supports = [
         'instance-settings',
