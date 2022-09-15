@@ -217,13 +217,22 @@ class ShippingMethod extends \WC_Shipping_Method
     private function getShippingMethods(): array
     {
         global $wpdb;
-        $methods = $wpdb->get_results(
-            $wpdb->prepare(
-                "SELECT * FROM {$wpdb->prefix}woocommerce_shipping_zone_methods WHERE zone_id = %d",
-                $zoneId
-            ),
+        $methods = [];
+        $rawMethods = $wpdb->get_results(
+            "SELECT DISTINCT method_id FROM {$wpdb->prefix}woocommerce_shipping_zone_methods ORDER BY method_id ASC",
             'ARRAY_A'
         );
-        die('<pre>methods: ' . var_export($methods, true));
+        if ($rawMethods) {
+            $methods = [];
+            foreach ($rawMethods as $rawMethod) {
+                if (
+                    !empty($rawMethod['method_id'])
+                    && $rawMethod['method_id'] !== self::METHOD_ID
+                ) {
+                    $methods[] = (string) $rawMethod['method_id'];
+                }
+            }
+        }
+        return $methods;
     }
 }
