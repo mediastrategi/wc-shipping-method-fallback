@@ -67,18 +67,16 @@ class ShippingMethod extends \WC_Shipping_Method
                 'type' => 'text',
             ],
             'shipping_method' => [
-                'class' => 'wc-enhanced-select',
                 'desc_tip' => false,
                 'description' => __(
                     'This shipping method will only be displayed if the selected shipping method cannot be found.',
                     'wc-shipping-method-fallback'
                 ),
-                'options' => $this->getShippingMethods(),
                 'title' => __(
                     'Shipping method to search for',
                     'wc-shipping-method-fallback'
                 ),
-                'type' => 'select',
+                'type' => 'hidden',
             ],
             'tax_status' => [
                 'title' => __('Tax status', 'woocommerce'),
@@ -213,26 +211,4 @@ class ShippingMethod extends \WC_Shipping_Method
         return;
     }
     // phpcs:enable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
-
-    private function getShippingMethods(): array
-    {
-        global $wpdb;
-        $methods = [];
-        $rawMethods = $wpdb->get_results(
-            "SELECT DISTINCT method_id FROM {$wpdb->prefix}woocommerce_shipping_zone_methods ORDER BY method_id ASC",
-            'ARRAY_A'
-        );
-        if ($rawMethods) {
-            $methods = [];
-            foreach ($rawMethods as $rawMethod) {
-                if (
-                    !empty($rawMethod['method_id'])
-                    && $rawMethod['method_id'] !== self::METHOD_ID
-                ) {
-                    $methods[] = (string) $rawMethod['method_id'];
-                }
-            }
-        }
-        return $methods;
-    }
 }

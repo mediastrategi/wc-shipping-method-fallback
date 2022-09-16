@@ -1,0 +1,10 @@
+#mainform.ajax-spinner label[for="woocommerce_wc-shipping-method-fallback_shipping_method"]:after
+{
+    content: '';
+    background: transparent url('ajax-loader.gif') center center no-repeat scroll;
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    right: -66px;
+    top: -6px;
+}
