@@ -19,7 +19,7 @@ class ShippingMethodInit
 
     public function add(array $methods): array
     {
-        $methods[ShippingMethod::METHOD_ID] = ShippingMethod::class;
+        $methods[Meta::METHOD_ID] = ShippingMethod::class;
         return $methods;
     }
 }

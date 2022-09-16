@@ -6,6 +6,9 @@ namespace Oktagon\WCShippingMethodFallback;
 
 class Meta
 {
+    const METHOD_ID = 'wc-shipping-method-fallback';
+    const METHOD_TITLE = 'Shipping Method Fallback';
+
     public function __construct()
     {
         \add_action(
@@ -95,8 +98,7 @@ class Meta
                 if (
                     is_array($rawMethod)
                     && !empty($rawMethod['method_id'])
-                    && $rawMethod['method_id'] !==
-                        \Oktagon\WCShippingMethodFallback\ShippingMethod::METHOD_ID
+                    && $rawMethod['method_id'] !== Meta::METHOD_ID
                 ) {
                     $methods[] = (string) $rawMethod['method_id'];
                 }

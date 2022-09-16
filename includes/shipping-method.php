@@ -9,22 +9,19 @@ namespace Oktagon\WCShippingMethodFallback;
  */
 class ShippingMethod extends \WC_Shipping_Method
 {
-    const METHOD_ID = 'wc-shipping-method-fallback';
-    const METHOD_TITLE = 'Shipping Method Fallback';
-
     public $cost = 0.0;
 
     public $description = '';
 
     public $enabled = 'yes';
 
-    public $id = self::METHOD_ID;
+    public $id = Meta::METHOD_ID;
 
     public $instance_id = 0;
 
     public $instance_form_fields = [];
 
-    public $method_title = self::METHOD_TITLE;
+    public $method_title = Meta::METHOD_TITLE;
 
     public $method_description = 'Shipping method fallback for checkout in the case a specific shipping method is not loading. This shipping method must be placed at the bottom of a shipping-zone in order for it to work.';
 
@@ -54,7 +51,7 @@ class ShippingMethod extends \WC_Shipping_Method
                     'Only visible when a specific shipping method is not loading.',
                     'wc-shipping-method-fallback'
                 ),
-                'default' => self::METHOD_TITLE,
+                'default' => Meta::METHOD_TITLE,
                 'desc_tip' => false,
             ],
             'cost' => [
